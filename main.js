@@ -1,6 +1,7 @@
 const inputRCBtn = document.getElementById("inputRCButton");
 const createMatrixBtn = document.getElementById("createMatrix");
-let rowVal, colVal;
+let rowVal = 2;
+let colVal = 2;
 
 inputRCBtn.addEventListener("click", inputRowCol)
 function inputRowCol()
@@ -25,9 +26,10 @@ function makeMatrix()
         for(let j = 1; j <= colVal; j++)
             {
                 const cell = document.createElement("input");
-                cell.type = "number";
+                cell.type = "text";
                 cell.id = `cell-${i}-${j}`;
                 cell.value = 31;
+                // cell.value = cell.value.replace(/[^0-9.-]/g, ""); Implement this later on
                 rowDiv.appendChild(cell);
             }
         }
